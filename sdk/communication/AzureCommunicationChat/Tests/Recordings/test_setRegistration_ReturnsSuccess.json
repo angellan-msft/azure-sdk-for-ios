@@ -1,20 +1,22 @@
 {
+  "name" : "test_setRegistration_ReturnsSuccess",
   "interactions" : [
     {
-      "recorded_at" : 1648793200.5983281,
       "request" : {
-        "url" : "https:\/\/edge.skype.com\/registrar\/prod\/v2\/registrations",
         "headers" : {
-          "User-Agent" : "azsdk-ios-AzureCommunicationChatTests\/1.0 (MacBookPro16,1 - 21.3.0; xctest:13.2 -> iOS 9.0; en_US)",
-          "Content-Type" : "application\/json"
+          "Content-Type" : "application\/json",
+          "User-Agent" : "azsdk-ios-AzureCommunicationChatTests\/1.0 (MacBookPro16,1 - 21.4.0; xctest:13.3 -> iOS 9.0; en_US)"
         },
         "body" : {
           "clientDescription" : {
-            "appId" : "AcsIos",
+            "templateKey" : "AcsIos.AcsNotify_Chat_4.0",
+            "aesKey" : "0000000000000000B00000000000000000000000AES=",
+            "platform" : "iOS",
             "platformUIVersion" : "3619\/0.0.0.0\/",
+            "appId" : "AcsIos",
+            "authKey" : "0000000000000000B0000000000000000000000AUTH=",
             "languageId" : "",
-            "templateKey" : "AcsIos.AcsNotify_Chat_1.0",
-            "platform" : "iOS"
+            "cryptoMethod" : "0x70"
           },
           "transports" : {
             "APNS" : [
@@ -28,22 +30,23 @@
           "registrationId" : "0E0F0BE0-0000-00C0-B000-A00A00E00BD0",
           "nodeId" : ""
         },
+        "url" : "https:\/\/edge.skype.com\/registrar\/prod\/v2\/registrations",
         "method" : "POST"
       },
+      "recorded_at" : 1649975636.393255,
       "response" : {
-        "headers" : {
-          "x-content-type-options" : "nosniff",
-          "ms-cv" : "avNoz9iHA0+JC6n0c\/k1hw.0",
-          "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
-          "x-msedge-ref" : "Ref A: CE7A7150E9A340FCB11C1C9828934D9C Ref B: YVR311000112031 Ref C: 2022-04-01T06:06:40Z",
-          "Content-Length" : "0",
-          "x-cache" : "CONFIG_NOCACHE"
-        },
         "url" : "https:\/\/edge.skype.com\/registrar\/prod\/v2\/registrations",
         "status" : 202,
+        "headers" : {
+          "x-content-type-options" : "nosniff",
+          "Strict-Transport-Security" : "max-age=31536000; includeSubDomains",
+          "x-msedge-ref" : "Ref A: A0555ED0A66944CFA1F22B50A8674103 Ref B: WSTEDGE1120 Ref C: 2022-04-14T22:33:56Z",
+          "x-cache" : "CONFIG_NOCACHE",
+          "Content-Length" : "0",
+          "ms-cv" : "LtYk3zMo1EOYwg2DWRWLiw.0"
+        },
         "body" : ""
       }
     }
-  ],
-  "name" : "test_setRegistration_ReturnsSuccess"
+  ]
 }

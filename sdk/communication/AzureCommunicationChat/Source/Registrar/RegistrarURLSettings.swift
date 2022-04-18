@@ -27,6 +27,7 @@
 import Foundation
 
 let defaultRegistrarServiceUrl: String = "https://edge.skype.com/registrar/prod/v2/registrations"
+// let defaultRegistrarServiceUrl: String = "https://edge.skype.net/registrar/testenv/v2/registrations"
 
 // GCC High gov cloud URLs
 let gcchRegistrarServiceUrl: String = "https://gov.teams.microsoft.us/v2/registrations"

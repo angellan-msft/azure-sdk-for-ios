@@ -27,14 +27,13 @@
 import Foundation
 
 struct PushNotificationBasePayload: Codable {
-    let eventId: Int
+    let eventId: String
     let senderId: String
     let recipientId: String
     let groupId: String
 }
 
 struct PushNotificationMessageReceivedPayload: Decodable {
-    let eventId: Int
     let senderId: String
     let recipientId: String
     let transactionId: String

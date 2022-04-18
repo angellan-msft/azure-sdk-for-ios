@@ -227,6 +227,9 @@
 		E0BE208427D88340008AC5DB /* PushNotificationChatEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE208327D88340008AC5DB /* PushNotificationChatEventType.swift */; };
 		E0E3C0C127CF1BB10044C30F /* test_setRegistration_ReturnsSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = E0E3C0C027CF1BB10044C30F /* test_setRegistration_ReturnsSuccess.json */; };
 		E0E3C0C327CFDEF10044C30F /* test_deleteRegistration_ReturnsSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = E0E3C0C227CFDEF10044C30F /* test_deleteRegistration_ReturnsSuccess.json */; };
+		E0E4D55427FBAFAA00DC283C /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E4D55327FBAFA900DC283C /* CryptoUtils.swift */; };
+		E0E4D55527FBAFAA00DC283C /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E4D55327FBAFA900DC283C /* CryptoUtils.swift */; };
+		E0F54E222807E777008A48CD /* CryptoUtilUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F54E212807E777008A48CD /* CryptoUtilUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -428,6 +431,8 @@
 		E0BE208327D88340008AC5DB /* PushNotificationChatEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationChatEventType.swift; sourceTree = "<group>"; };
 		E0E3C0C027CF1BB10044C30F /* test_setRegistration_ReturnsSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_setRegistration_ReturnsSuccess.json; sourceTree = "<group>"; };
 		E0E3C0C227CFDEF10044C30F /* test_deleteRegistration_ReturnsSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_deleteRegistration_ReturnsSuccess.json; sourceTree = "<group>"; };
+		E0E4D55327FBAFA900DC283C /* CryptoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtils.swift; sourceTree = "<group>"; };
+		E0F54E212807E777008A48CD /* CryptoUtilUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtilUnitTests.swift; sourceTree = "<group>"; };
 		FCF18D210ADF02D5CBA71786 /* Pods-AzureCommunicationChatUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzureCommunicationChatUnitTests.release.xcconfig"; path = "Target Support Files/Pods-AzureCommunicationChatUnitTests/Pods-AzureCommunicationChatUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -586,6 +591,7 @@
 				D1CD93A1258D6BC700409613 /* ChatClientTests.swift */,
 				D1CD93A7258D6BDC00409613 /* ChatThreadClientTests.swift */,
 				0A1E7593267003A000054F60 /* ChatClientDVRTests.swift */,
+				E0F54E212807E777008A48CD /* CryptoUtilUnitTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -788,6 +794,7 @@
 			isa = PBXGroup;
 			children = (
 				E047A92B27E1A61C007D3CCA /* URLSettingsUtil.swift */,
+				E0E4D55327FBAFA900DC283C /* CryptoUtils.swift */,
 			);
 			path = NotificationUtils;
 			sourceTree = "<group>";
@@ -1159,10 +1166,12 @@
 				E0075D0727F020160010E652 /* ChatMessageReadReceiptInternal.swift in Sources */,
 				D1CD93A8258D6BDC00409613 /* ChatThreadClientTests.swift in Sources */,
 				E0075CF827F01F030010E652 /* IdentifierSerializer.swift in Sources */,
+				E0E4D55527FBAFAA00DC283C /* CryptoUtils.swift in Sources */,
 				D1CD93AD258D6C2500409613 /* Util.swift in Sources */,
 				E0075D0027F01FB40010E652 /* URLSettingsUtil.swift in Sources */,
 				D1E4DD8726B1D1D300B7691E /* ChatClientDVRTests.swift in Sources */,
 				E0075CE227F01E620010E652 /* CreateChatThreadResult.swift in Sources */,
+				E0F54E222807E777008A48CD /* CryptoUtilUnitTests.swift in Sources */,
 				E0075CED27F01EAB0010E652 /* DeleteChatMessageOptions.swift in Sources */,
 				D105A4D126D711FE008C5FF0 /* RegistrarClientTests.swift in Sources */,
 				E0075CFE27F01F1D0010E652 /* TrouterEventUtil.swift in Sources */,
@@ -1325,6 +1334,7 @@
 				D1D6182D26B3198C0022231D /* ChatEvent.swift in Sources */,
 				D1D6182E26B3198C0022231D /* TrouterEvent.swift in Sources */,
 				D1D6182F26B3198C0022231D /* TrouterEventUtil.swift in Sources */,
+				E0E4D55427FBAFAA00DC283C /* CryptoUtils.swift in Sources */,
 				D1D6183026B3198C0022231D /* TokenCredentialAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1464,7 +1474,7 @@
 				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1499,7 +1509,7 @@
 				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1567,7 +1577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1630,7 +1640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

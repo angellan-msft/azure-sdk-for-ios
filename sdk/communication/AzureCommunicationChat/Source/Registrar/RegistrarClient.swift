@@ -125,6 +125,10 @@ internal class RegistrarClient: PipelineClient {
             ]
         )
 
+        print("Print keys:")
+        print(registrarRequestBody.clientDescription.authKey)
+        print(registrarRequestBody.clientDescription.aesKey)
+
         guard let data = try? JSONEncoder().encode(registrarRequestBody) else {
             completionHandler(.failure(AzureError.client("Failed to serialize POST request body.")))
             return

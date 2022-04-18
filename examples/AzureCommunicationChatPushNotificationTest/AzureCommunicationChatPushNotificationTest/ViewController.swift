@@ -24,48 +24,15 @@
 //
 // --------------------------------------------------------------------------
 
-import Foundation
+import UIKit
 
-/// Client description for set registration requests.
-internal struct RegistrarClientDescription: Codable {
-    /// The AppId.
-    internal let appId: String
-    /// IETF Language tags.
-    internal let languageId: String
-    /// Client platform.
-    internal let platform: String
-    /// Platform ID.
-    internal let platformUIVersion: String
-    /// Template key.
-    internal let templateKey: String
-    /// Template version.
-    internal let templateVersion: String?
-    /// Crypto key.
-    internal let aesKey: String
-    /// Auth key.
-    internal let authKey: String
-    /// Crypto method.
-    internal let cryptoMethod: String
+class ViewController: UIViewController {
 
-    internal init(
-        appId: String,
-        languageId: String,
-        platform: String,
-        platformUIVersion: String,
-        templateKey: String,
-        templateVersion: String? = nil,
-        aesKey: String,
-        authKey: String,
-        cryptoMethod: String
-    ) {
-        self.appId = appId
-        self.languageId = languageId
-        self.platform = platform
-        self.platformUIVersion = platformUIVersion
-        self.templateKey = templateKey
-        self.templateVersion = templateVersion
-        self.aesKey = aesKey
-        self.authKey = authKey
-        self.cryptoMethod = cryptoMethod
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
+
+
 }
+
