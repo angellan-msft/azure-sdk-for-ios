@@ -24,27 +24,15 @@
 //
 // --------------------------------------------------------------------------
 
-import Foundation
+import UIKit
 
-// let defaultRegistrarServiceUrl: String = "https://edge.skype.com/registrar/prod/v2/registrations"
-let defaultRegistrarServiceUrl: String = "https://edge.skype.net/registrar/testenv/v2/registrations"
+class ViewController: UIViewController {
 
-// GCC High gov cloud URLs
-let gcchRegistrarServiceUrl: String = "https://gov.teams.microsoft.us/v2/registrations"
-
-// DoD gov cloud URLs
-let dodRegistrarServiceUrl: String = "https://dod.teams.microsoft.us/v2/registrations"
-
-func getRegistrarServiceUrl(token: String) throws -> String {
-    let jwt = try decode(jwtToken: token)
-    if let skypeToken = jwt["skypeid"] as? String {
-        if isGcch(id: skypeToken) {
-            return gcchRegistrarServiceUrl
-        }
-        if isDod(id: skypeToken) {
-            return dodRegistrarServiceUrl
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
 
-    return defaultRegistrarServiceUrl
+
 }
+

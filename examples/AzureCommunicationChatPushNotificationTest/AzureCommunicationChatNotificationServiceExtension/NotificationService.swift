@@ -24,27 +24,33 @@
 //
 // --------------------------------------------------------------------------
 
-import Foundation
+import UserNotifications
 
-// let defaultRegistrarServiceUrl: String = "https://edge.skype.com/registrar/prod/v2/registrations"
-let defaultRegistrarServiceUrl: String = "https://edge.skype.net/registrar/testenv/v2/registrations"
+class NotificationService: UNNotificationServiceExtension {
 
-// GCC High gov cloud URLs
-let gcchRegistrarServiceUrl: String = "https://gov.teams.microsoft.us/v2/registrations"
+    var contentHandler: ((UNNotificationContent) -> Void)?
+    var bestAttemptContent: UNMutableNotificationContent?
 
-// DoD gov cloud URLs
-let dodRegistrarServiceUrl: String = "https://dod.teams.microsoft.us/v2/registrations"
-
-func getRegistrarServiceUrl(token: String) throws -> String {
-    let jwt = try decode(jwtToken: token)
-    if let skypeToken = jwt["skypeid"] as? String {
-        if isGcch(id: skypeToken) {
-            return gcchRegistrarServiceUrl
+    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+        print("This is for testing 1")
+        self.contentHandler = contentHandler
+        bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+        
+        if let bestAttemptContent = bestAttemptContent {
+            // Modify the notification content here...
+            bestAttemptContent.title = "\("Test Tile") [modified]"
+            
+            contentHandler(bestAttemptContent)
         }
-        if isDod(id: skypeToken) {
-            return dodRegistrarServiceUrl
+    }
+    
+    override func serviceExtensionTimeWillExpire() {
+        print("This is for testing 2")
+        // Called just before the extension will be terminated by the system.
+        // Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.
+        if let contentHandler = contentHandler, let bestAttemptContent =  bestAttemptContent {
+            contentHandler(bestAttemptContent)
         }
     }
 
-    return defaultRegistrarServiceUrl
 }
